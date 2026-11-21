@@ -133,3 +133,14 @@ html[data-theme=dark] .map iframe{filter:invert(.9) hue-rotate(180deg) sepia(.3)
 
 /* menu preview: show the whole photo inside the arch instead of cropping it */
 .prev::before{background-size:contain;background-repeat:no-repeat;background-position:center}
+
+/* mobile + tablet: menu list on one side, picture on the other (laptop/desktop unchanged) */
+@media(max-width:979px){
+ .menu-grid{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:1rem;align-items:start}
+ .menu-grid h2{font-size:clamp(1.7rem,6vw,2.6rem)}
+ .prev-wrap{order:0;position:sticky;top:5rem}
+ .prev{aspect-ratio:3/4;max-width:none;width:100%}
+ .mi{grid-template-columns:1.9rem 1fr}
+ .mi .t{font-size:1.2rem}
+ .mi .d{font-size:.8rem}.mi.on .d{max-height:7rem}
+}
